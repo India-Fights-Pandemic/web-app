@@ -45,7 +45,7 @@ function get_encoded_url_for_query(city_name, need_list, city_lookalike_map) {
 
   var uri_encoded = 'https://twitter.com/search?q=' + encodeURI(full_query) + '&f=live';
 
-  alert(uri_encoded);
+  // alert(uri_encoded);
   console.log(uri_encoded);
   //console.log(JSON.stringify(uri_encoded)); 
   return uri_encoded;
