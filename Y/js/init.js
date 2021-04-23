@@ -19,10 +19,15 @@ var arr = [];
 
 var city_lookalike_map = {
   'delhi': ['ncr', 'new delhi', 'delhi'],
-  'ncr': ['ncr', 'new delhi', 'delhi'],
-  'new delhi': ['ncr', 'new delhi', 'delhi'],
+  'ncr': ['ncr', 'delhi', 'gurgaon', 'faridabad', 'noida', 'ghaziabad'],
+  'new delhi': ['new delhi', 'delhi'],
+  'gurgaon': ['ncr', 'gurgaon', 'gurugram'],
+  'gurugram': ['ncr', 'gurgaon', 'gurugram'],
   'bangalore': ['bangalore', 'bengaluru'],
   'bengaluru': ['bangalore', 'bengaluru'],
+  'mumbai': ['mumbai', 'thane'],
+  'dehra dun': ['dehra dun', 'dehradun'],
+  'dehradun': ['dehra dun', 'dehradun'],
   'sonipat': ['sonipat', 'sonepat'],
   'sonepat': ['sonipat', 'sonepat'],
   'trichy': ['trichy', 'tiruchirappalli'],
