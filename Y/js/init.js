@@ -19,11 +19,21 @@ var arr = [];
 
 var city_lookalike_map = {
   'delhi': ['ncr', 'new delhi', 'delhi'],
+  'ncr': ['ncr', 'delhi', 'gurgaon', 'faridabad', 'noida', 'ghaziabad'],
+  'new delhi': ['new delhi', 'delhi'],
+  'gurgaon': ['ncr', 'gurgaon', 'gurugram'],
+  'gurugram': ['ncr', 'gurgaon', 'gurugram'],
   'bangalore': ['bangalore', 'bengaluru'],
+  'bengaluru': ['bangalore', 'bengaluru'],
+  'mumbai': ['mumbai', 'thane'],
+  'dehra dun': ['dehra dun', 'dehradun'],
+  'dehradun': ['dehra dun', 'dehradun'],
   'sonipat': ['sonipat', 'sonepat'],
-  'sonipat': ['sonipat', 'sonepat'],
+  'sonepat': ['sonipat', 'sonepat'],
   'trichy': ['trichy', 'tiruchirappalli'],
-  'vishakhapatnam': ['vishakhapatnam', 'vizag']
+  'tiruchirappalli': ['trichy', 'tiruchirappalli'],
+  'vishakhapatnam': ['vishakhapatnam', 'vizag'],
+  'vizag': ['vishakhapatnam', 'vizag']
 };
 function removeA(arr) {
     var what, a = arguments, L = a.length, ax;
@@ -66,7 +76,7 @@ function get_encoded_url_for_query( city_lookalike_map) {
   city_name = city_name.toLowerCase();
 // alert(city_name);
 // alert(arr);
-  var negative_query = ' -"wanter" -"not verified" -"unverified" -"needed" -"required" ';
+  var negative_query = ' -"wanted" -"not verified" -"unverified" -"needed" -"required" -"need" -"leads" ';
   var verified_query = ' (verified verfied) ';
 
   var need_list_query = gen_str_or_query(arr);   
