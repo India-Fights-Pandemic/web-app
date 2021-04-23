@@ -3,10 +3,13 @@
 var city_name = 'delhi';
 var need_list = ['beds', 'oxygen', 'ventilator'];
 //var need_list = ['beds'];
+
 var city_lookalike_map = {
   'delhi': ['ncr', 'new delhi', 'delhi'],
   'bangalore': ['bangalore', 'bengaluru'],
-  'mumbai': ['mumbai', 'bombay'],
+  'sonipat': ['sonipat', 'sonepat'],
+  'sonipat': ['sonipat', 'sonepat'],
+  'trichy': ['trichy', 'tiruchirappalli'],
   'vishakhapatnam': ['vishakhapatnam', 'vizag']
 };
 
@@ -42,16 +45,16 @@ function get_encoded_url_for_query(city_name, need_list, city_lookalike_map) {
 
   var uri_encoded = 'https://twitter.com/search?q=' + encodeURI(full_query) + '&f=live';
 
-//  alert(uri_encoded);
-//  console.log(uri_encoded);
-  
+  alert(uri_encoded);
+  console.log(uri_encoded);
+  //console.log(JSON.stringify(uri_encoded)); 
   return uri_encoded;
 }
 
 
 
 
-// get_encoded_url_for_query('mumbai', need_list, city_lookalike_map)
+get_encoded_url_for_query('mumbai', need_list, city_lookalike_map)
 /* get_encoded_url_for_query('mumbai', need_list, city_lookalike_map)
 get_encoded_url_for_query('mumbai', ['fabiflu'], city_lookalike_map)
  */
