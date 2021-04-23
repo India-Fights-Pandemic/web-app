@@ -1,130 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
   <title>India Fights Pandemic</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
+
 <body>
   <nav class="teal lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/" class="brand-logo">
+        <img src="images/logo.png" alt="logo" class="main-logo" />
+      </a>
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-      <br><br>
-      <h1 class="header center teal-text">India Fights the Pandemic</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Find all the resources for COVID-19, verified.</h5>
+      <h1 class="header center teal-text">Real-Time Search for Verified Covid-19 Resources</h1>
+      <div class="row">
+        <div class="col l6 s12 offset-l3">
+          <div class="row left mt-4">
+            <div class="autocomplete col s12" style="position: relative;">
+              <h5 class="header light">Which city are you looking for help in?</h5>
+              <input id="myInput" type="text" name="myCountry" placeholder="Enter City Name">
+            </div>
+            <div class="col s12 ">
+              <h5 class="header light">What resources are you looking for?</h5>
+              <h6 class=" light">Can select multiple options</h6>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="beds" id="beds" onClick="updateCheckbox(beds)" />
+                <span>Beds</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="icu" id="icu" onClick="updateCheckbox(icu)" />
+                <span>ICU</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="oxygen" id="oxygen" onClick="updateCheckbox(oxygen)" />
+                <span>Oxygen</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="ventilator" id="ventilator" onClick="updateCheckbox(ventilator)" />
+                <span>Ventilator</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="fabiflu" id="fabiflu" onClick="updateCheckbox(fabiflu)" />
+                <span>Fabiflu</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="remdesvir" id="remdesvir" onClick="updateCheckbox(remdesvir)" />
+                <span>Remdesvir</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="favipiravir" id="favipiravir" onClick="updateCheckbox(favipiravir)" />
+                <span>Favipiravir</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="tocilizumab" id="tocilizumab" onClick="updateCheckbox(tocilizumab)" />
+                <span>Tocilizumab</span>
+              </label>
+            </div>
+            <div class="col s12 mt-4">
+              <label>
+                <input type="checkbox" value="plasma" id="plasma" onClick="updateCheckbox(plasma)" />
+                <span>Plasma</span>
+              </label>
+            </div>
+            <button class="btn-large waves-effect waves-light teal mt-10 custom-button" onClick="get_encoded_url_for_query()">Search</button>
+          </div>
+        </div>
       </div>
-      <div class="row center">
-        <a href="https://twitter.com/search?q=verified+Delhi+%28bed+OR+beds+OR+icu+OR+oxygen+OR+ventilator+OR+ventilators+OR+fabiflu%29+-%22not+verified%22+-%22unverified%22+-%22needed%22+-%22required%22&f=live" id="download-button" class="btn-large waves-effect waves-light teal">Search</a>
-      </div>
-      <br><br>
+      <div class="section">
 
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="footer-text light-teal-text col s2">❤️</h2>
+              <h5 class="footer-text col s10"><b>About Us</b></h5>
+              <h5 class="footer-text col email-text s10">India Fights Pandemic is an open source volutary project that searches the internet to surface real time availability of essential Covid-19 resources in India</h5>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="row icon-block">
+              <h2 class="footer-text light-teal-text col s2">✉️</h2>
+              <h5 class="footer-text col s10"><b>Reach On</b></h5>
+              <h5 class="footer-text email-text col s10"><a href="mailto:volunteers@indiafightspandemic.com" >volunteers@indiafightspandemic.com</a></h5>
+  
+              
+            </div>
+            <!-- <div class="row icon-block">
+              <h2 class="footer-text light-teal-text col s2"><i class="material-icons">twitter</i></h2>
+              <h5 class="footer-text col s10"><b>Reach On</b></h5>
+              <h5 class="footer-text email-text col s10"></h5>
+  
+              
+            </div> -->
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-teal-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-teal-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-teal-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <br><br>
-  </div>
-
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="teal-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-
-
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/8.4.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- <script src="/__/firebase/8.4.1/firebase-app.js"></script> -->
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/8.4.1/firebase-analytics.js"></script>
+  <!-- <script src="/__/firebase/8.4.1/firebase-analytics.js"></script> -->
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
-  </body>
+  <!-- Initialize Firebase -->
+  <!-- <script src="/__/firebase/init.js"></script> -->
+
+
+
+</body>
+
 </html>
