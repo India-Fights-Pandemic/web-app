@@ -55,9 +55,15 @@ h3.header2{
   background-color: #009688;
   color: #FFFFFF;
   box-shadow: 0 2px 2px 0 rgb(33 151 136 / 14%), 0 3px 1px -2px rgb(33 151 136 / 20%), 0 1px 5px 0 rgb(33 151 136 / 12%)  ;
+  white-space: normal;
+  text-transform: none;
+  font-size: 1.2em;
 }
 .btn.btn-primary.custom-btn:hover{
   box-shadow: 0 14px 26px -12px rgb(33 151 136 / 42%), 0 4px 23px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(33 151 136 / 20%)
+}
+.btn.btn-primary:active:hover{
+  background-color: #009688;
 }
 .space-70 {
   height: 40px;
@@ -127,6 +133,20 @@ h6.light{
 }
 .email-text a{
   color: #000;
+  word-break: break-all;
+}
+.mt-15{
+  margin-top: 15px;
+}
+.modal-content .modal-body {
+  padding-top: 6px;
+  padding-right: 24px;
+  padding-bottom: 6px;
+  padding-left: 24px;
+}
+ol li.mt-15{
+  font-size: 1.5rem;
+  font-family: "Roboto",sans-serif;
 }
 @media (min-width: 1200px){
   .container {
