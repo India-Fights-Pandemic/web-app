@@ -83,7 +83,7 @@ function get_encoded_url_for_query( city_lookalike_map) {
   
   var city_syn_query = gen_city_query(city_name);
 
-  var full_query = need_list_query + city_syn_query + verified_query + negative_query;
+  var full_query = verified_query + need_list_query + city_syn_query + negative_query;
 
   console.log(full_query);
 
@@ -92,7 +92,16 @@ function get_encoded_url_for_query( city_lookalike_map) {
   // alert(uri_encoded);
   console.log(uri_encoded);
   //console.log(JSON.stringify(uri_encoded)); 
-  window.open(uri_encoded, '_blank');
+//   var mydiv = document.getElementById("modalBtn");
+//   alert(mydiv)
+// var aTag = document.createElement('a');
+// aTag.setAttribute('href',uri_encoded);
+// aTag.innerText = "View Search Results on Twitter";
+// mydiv.appendChild(aTag);
+  $('#modalBtn').empty();
+  $('#modalBtn').append(`<a href="${uri_encoded}" class="btn btn-primary  custom-btn" target="_blank" rel="noopener noreferrer">View Search Results on Twitter</a>`)
+  $('#myModal').modal('show')
+  // window.open(uri_encoded, '_blank');
   // return uri_encoded;
 }
 
@@ -195,8 +204,8 @@ function autocomplete(inp, arr) {
   });
 }
 
-/*An array containing all major city names in India:*/
-var countries = ["Delhi","Mumbai","Kolkata","Bangalore","Chennai","Hyderabad","Pune","Ahmedabad","Surat","Lucknow","Jaipur","Kanpur","Mirzapur","Nagpur","Ghaziabad","Indore","Vadodara","Vishakhapatnam","Bhopal","Chinchvad","Patna","Ludhiana","Agra","Kalyan","Madurai","Jamshedpur","Nasik","Faridabad","Aurangabad","Rajkot","Meerut","Jabalpur","Thane","Dhanbad","Allahabad","Varanasi","Srinagar","Amritsar","Aligarh","Bhiwandi","Gwalior","Bhilai","Haora","Ranchi","Vijaywada","Chandigarh","Mysore","Raipur","Kota","Bareilly","Jodhpur","Coimbatore","Dispur","Guwahati","Solapur","Trichy","Hubli","Jalandhar","Bhubaneshwar","Bhayandar","Moradabad","Kolhapur","Thiruvananthapuram","Saharanpur","Warangal","Salem","Malegaon","Kochi","Gorakhpur","Shimoga","Tiruppur","Guntur","Raurkela","Mangalore","Nanded","Cuttack","Chanda","Dehra Dun","Durgapur","Asansol","Bhavnagar","Amravati","Nellore","Ajmer","Tinnevelly","Bikaner","Agartala","Ujjain","Jhansi","Ulhasnagar","Davangere","Jammu","Belgaum","Gulbarga","Jamnagar","Dhulia","Gaya","Jalgaon","Kurnool","Udaipur","Bellary","Sangli","Tuticorin","Calicut","Akola","Bhagalpur","Sikar","Tumkur","Kollam","Muzaffarnagar","Bhilwara","Nizamabad","Bhatpara","Kakinada","Parbhani","Panihati","Latur","Rohtak","Rajapalaiyam","Ahmadnagar","Cuddapah","Rajahmundry","Alwar","Muzaffarpur","Bilaspur","Mathura","Kamarhati","Patiala","Saugor","Bijapur","Brahmapur","Shahjanpur","Trichur","Barddhaman","Kulti","Sambalpur","Purnea","Hisar","Firozabad","Bidar","Rampur","Shiliguri","Bali","Panipat","Karimnagar","Bhuj","Ichalkaranji","Tirupati","Hospet","Aizawl","Sannai","Barasat","Ratlam","Handwara","Durg","Imphal","Anantapur","Etawah","Raichur","Ongole","Bharatpur","Begusarai","Sonipat","Ramgundam","Hapur","Uluberiya","Porbandar","Pali","Vizianagaram","Puducherry","Karnal","Nagercoil","Tanjore","Sambhal","Shimla","Ghandinagar","Shillong","New Delhi","Port Blair","Gangtok","Kohima","Itanagar","Panaji","Daman","Kavaratti","Panchkula","Kagaznagar"];
+/*An array containing all the country names in the world:*/
+var countries = ["Delhi","Gurgaon","Ghaziabad","Noida","Faridabad","Mumbai","Kolkata","Bangalore","Chennai","Hyderabad","Pune","Ahmedabad","Surat","Lucknow","Jaipur","Kanpur","Mirzapur","Nagpur","Ghaziabad","Indore","Vadodara","Vishakhapatnam","Bhopal","Chinchvad","Patna","Ludhiana","Agra","Kalyan","Madurai","Jamshedpur","Nasik","Aurangabad","Rajkot","Meerut","Jabalpur","Thane","Dhanbad","Allahabad","Varanasi","Srinagar","Amritsar","Aligarh","Bhiwandi","Gwalior","Bhilai","Haora","Ranchi","Vijaywada","Chandigarh","Mysore","Raipur","Kota","Bareilly","Jodhpur","Coimbatore","Dispur","Guwahati","Solapur","Trichy","Hubli","Dharwad","Jalandhar","Bhubaneshwar","Bhayandar","Moradabad","Kolhapur","Thiruvananthapuram","Saharanpur","Warangal","Salem","Malegaon","Kochi","Gorakhpur","Shimoga","Tiruppur","Guntur","Raurkela","Mangalore","Nanded","Cuttack","Chanda","Dehra Dun","Durgapur","Asansol","Bhavnagar","Amravati","Nellore","Ajmer","Tinnevelly","Bikaner","Agartala","Ujjain","Jhansi","Ulhasnagar","Davangere","Jammu","Belgaum","Gulbarga","Jamnagar","Dhulia","Gaya","Jalgaon","Kurnool","Udaipur","Bellary","Sangli","Tuticorin","Calicut","Akola","Bhagalpur","Sikar","Tumkur","Kollam","Muzaffarnagar","Bhilwara","Nizamabad","Bhatpara","Kakinada","Parbhani","Panihati","Latur","Rohtak","Rajapalaiyam","Ahmadnagar","Cuddapah","Rajahmundry","Alwar","Muzaffarpur","Bilaspur","Mathura","Kamarhati","Patiala","Saugor","Bijapur","Brahmapur","Shahjanpur","Trichur","Barddhaman","Kulti","Sambalpur","Purnea","Hisar","Firozabad","Bidar","Rampur","Shiliguri","Bali","Panipat","Karimnagar","Bhuj","Ichalkaranji","Tirupati","Hospet","Aizawl","Sannai","Barasat","Ratlam","Handwara","Durg","Imphal","Anantapur","Etawah","Raichur","Ongole","Bharatpur","Begusarai","Sonipat","Ramgundam","Hapur","Uluberiya","Porbandar","Pali","Vizianagaram","Puducherry","Karnal","Nagercoil","Tanjore","Sambhal","Shimla","Ghandinagar","Shillong","New Delhi","Port Blair","Gangtok","Kohima","Itanagar","Panaji","Daman","Kavaratti","Panchkula","Kagaznagar"];
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), countries);
