@@ -46,6 +46,17 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
 
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXWH84M0R5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CXWH84M0R5');
+  </script>
+
 </head>
 
 <body class="index-page">
@@ -126,6 +137,14 @@
                   <label>
                     <input type="checkbox" value="oxygen" id="oxygen" onClick="updateCheckbox(oxygen)" />
                     <span>Oxygen</span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="concentrator" id="concentrator" onClick="updateCheckbox(concentrator)" />
+                    <span>Concentrator</span>
                   </label>
                 </div>
               </div>
@@ -238,19 +257,6 @@
   </div>
   </div>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/8.4.1/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/8.4.1/firebase-analytics.js"></script>
-
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
-
-  <script>
-    firebase.analytics();
-  </script>>
   <!-- Classic Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-notice">
@@ -297,6 +303,22 @@
     </div>
   </div>
   <!--  End Modal -->
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/8.4.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="/__/firebase/8.4.1/firebase-analytics.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+
+  <script>
+    firebase.analytics();
+  </script>>
+
 </body>
 <!--   Core JS Files   -->
 <script src="js/jquery.min.js" type="text/javascript"></script>
