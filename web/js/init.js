@@ -56,13 +56,15 @@ function generateCityQuery(city) {
 }
 
 function get_encoded_url_for_query(cityLookalikeMap) {
-  var cityName = document.getElementById("myInput").value;
+  var cityName = document.getElementById("myCityInput").value;
+  var otherSearch = document.getElementById("otherSearchInput").value;
   cityName = cityName.toLowerCase();
   var negativeQuery = ' -"wanted" -"not verified" -"unverified" -"needed" -"required" -"need" -"leads" ';
   var verifiedQuery = ' verified ';
   var needListQuery = generateOrQuery(arr);
+  var otherQuery = otherSearch ? ' ' + otherSearch + ' ' : '';
   var citySynQuery = generateCityQuery(cityName);
-  var fullQuery = verifiedQuery + needListQuery + citySynQuery + negativeQuery;
+  var fullQuery = verifiedQuery + needListQuery + otherQuery + citySynQuery + negativeQuery;
   var uriEncoded = 'https://twitter.com/search?q=' + encodeURI(fullQuery) + '&f=live';
 
   $('#modalBtn').empty();
@@ -197,5 +199,6 @@ function autocomplete(inp, arr) {
   });
 }
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the indianCities array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), indianCities);
+/*initiate the autocomplete function on the "myCityInput" element,
+  and pass along the indianCities array as possible autocomplete values:*/
+autocomplete(document.getElementById("myCityInput"), indianCities);
