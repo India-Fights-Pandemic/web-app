@@ -61,10 +61,11 @@ function get_encoded_url_for_query(cityLookalikeMap) {
   cityName = cityName.toLowerCase();
   var negativeQuery = ' -"wanted" -"not verified" -"unverified" -"needed" -"required" -"need" -"leads" ';
   var verifiedQuery = ' verified ';
-  var needListQuery = generateOrQuery(arr);
-  var otherQuery = otherSearch ? ' ' + otherSearch + ' ' : '';
+
+  let combinedArr = otherSearch ? arr.concat([otherSearch]) : arr;
+  var needListQuery = generateOrQuery(combinedArr);
   var citySynQuery = generateCityQuery(cityName);
-  var fullQuery = verifiedQuery + needListQuery + otherQuery + citySynQuery + negativeQuery;
+  var fullQuery = verifiedQuery + needListQuery + citySynQuery + negativeQuery;
   var uriEncoded = 'https://twitter.com/search?q=' + encodeURI(fullQuery) + '&f=live';
 
   $('#modalBtn').empty();
