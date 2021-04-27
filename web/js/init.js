@@ -32,16 +32,18 @@ var cityLookalikeMap = {
  * Page handler functions
  */
 
-function updateCheckbox(val) {
-  if (val.checked) {
-    arr.push(val.value);
+function updateCheckbox(checkbox) {
+  if (checkbox.checked) {
+    keywordSynonymsList.push(checkbox.value); // provide synonyms as comma-separated values
   } else {
-    removeA(arr, val.value);
+    removeSynonymsEntry(keywordSynonymsList, checkbox.value);
   }
 }
 
-function generateOrQuery(optionsList) {
-  var genList = ' (' + optionsList.join(' OR ') + ') ';
+const OR_SEPARATOR = ' OR ';
+
+function generateOrQuery(synonymsCsv) {
+  var genList = ' (' + synonymsCsv.map(csv => csv.split(',').join(OR_SEPARATOR)).join(OR_SEPARATOR) + ') ';
   return genList;
 }
 
@@ -60,7 +62,7 @@ function get_encoded_url_for_query(cityLookalikeMap) {
   cityName = cityName.toLowerCase();
   var negativeQuery = ' -"wanted" -"not verified" -"unverified" -"needed" -"required" -"need" -"leads" ';
   var verifiedQuery = ' verified ';
-  var needListQuery = generateOrQuery(arr);
+  var needListQuery = generateOrQuery(keywordSynonymsList);
   var citySynQuery = generateCityQuery(cityName);
   var fullQuery = verifiedQuery + needListQuery + citySynQuery + negativeQuery;
   var uriEncoded = 'https://twitter.com/search?q=' + encodeURI(fullQuery) + '&f=live';
@@ -71,12 +73,14 @@ function get_encoded_url_for_query(cityLookalikeMap) {
 }
 
 
+
+/** @type {string[]} */
+var keywordSynonymsList = [];
+
 /**
  * Util functions used in the script
  */
-
-var arr = [];
-function removeA(arr) {
+function removeSynonymsEntry(arr) {
   var what, a = arguments,
     L = a.length,
     ax;
