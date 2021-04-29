@@ -32,10 +32,21 @@ India Fights Pandemic is an Open Source voluntary project that searches the Inte
 
 ## How to Setup
 
+* git clone
+* run via python http server or 
 
 
+## Testing & deployment
+
+* PR test on firebase
+* merge & deployment for approved users
 
 ## Contribution
+
+* reporting bugs
+* suggesting enhancements
+* code contribution
+* pull requests
 
 ### Issues
 - [Open Issues](https://github.com/India-Fights-Pandemic/web-app/issues)
