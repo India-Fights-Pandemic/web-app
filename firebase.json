@@ -10,7 +10,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
+            "value": "public, max-age=3600, s-maxage=3600"
           }
         ]
       },
@@ -20,7 +20,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=60"
+            "value": "public, max-age=3600, s-maxage=3600"
           }
         ]
       }
