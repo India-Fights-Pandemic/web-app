@@ -33,13 +33,15 @@ India Fights Pandemic is an Open Source voluntary project that searches the Inte
 ## How to Setup
 
 * git clone
-* run via python http server or 
+* open on browser or use firebase local (recommended)
+* https://firebase.google.com/docs/hosting/test-preview-deploy 
 
 
 ## Testing & deployment
 
 * PR test on firebase
 * merge & deployment for approved users
+* checklist of things to test
 
 ## Contribution
 
@@ -52,10 +54,13 @@ India Fights Pandemic is an Open Source voluntary project that searches the Inte
 - [Open Issues](https://github.com/India-Fights-Pandemic/web-app/issues)
 - [How to Contribute]()
 
-### Contribution Guildelines
+## Good to read
+* https://opensource.guide/how-to-contribute/ 
+* 
 
-### Website
+## Vision
 
+* What the project focusses on? What it does not?
 
 ### License
 This repository has been released under the [MIT License](LICENSE).
