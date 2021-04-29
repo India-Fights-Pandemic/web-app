@@ -15,8 +15,8 @@ India Fights Pandemic is an Open Source voluntary project that searches the Inte
 </div>
 
 <div align="center">
-    <a href="https://github.com/India-Fights-Pandemic/react-web-app/actions/workflows/firebase-hosting-pull-request.yml">
-        <img src="https://github.com/India-Fights-Pandemic/react-web-app/actions/workflows/firebase-hosting-pull-request.yml/badge.svg">
+    <a href="https://github.com/India-Fights-Pandemic/web-app/actions/workflows/firebase-hosting-pull-request.yml">
+        <img src="https://github.com/India-Fights-Pandemic/web-app/actions/workflows/firebase-hosting-pull-request.yml/badge.svg">
     </a>
 </div>
 
