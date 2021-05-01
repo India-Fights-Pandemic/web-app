@@ -27,6 +27,12 @@ var cityLookalikeMap = {
   'vizag': ['vishakhapatnam', 'vizag']
 };
 
+var donateLinks = {
+  'goonjIndian': 'https://goonj.org/donate/',
+  'goonjForeign': 'https://goonj.org/donate-foreign/',
+  'pmcares': 'https://www.pmcares.gov.in/en/',
+  'zomato': 'https://www.feedingindia.org/donate/help-save-my-india'
+}
 
 /**
  * Page handler functions
@@ -74,6 +80,14 @@ function get_encoded_url_for_query(cityLookalikeMap) {
   $('#myModal').modal('show')
 }
 
+
+function donateClick(donateTo) {
+  window.open(donateLinks[donateTo]);
+}
+
+function trackDonateClick() {
+  console.log('tracking donation');
+}
 
 
 /** @type {string[]} */

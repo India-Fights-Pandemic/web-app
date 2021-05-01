@@ -168,6 +168,19 @@ h6.light {
   padding-left: 24px;
 }
 
+@media (min-width: 600px) {
+  .modal-content-donate {
+    padding-top: 12px;
+    padding-right: 36px;
+    padding-bottom: 12px;
+    padding-left: 36px;
+  }
+
+  .modal-content-donate .modal-header .close {
+    margin-right: -30px;
+  }
+}
+
 ol li.mt-15 {
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;

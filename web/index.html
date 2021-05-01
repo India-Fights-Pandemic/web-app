@@ -94,7 +94,14 @@
               <button  class="btn btn-simple custom-btn-link" data-toggle="modal" data-target="#myModal2">
                 🧑‍🤝‍🧑 <span>Volunteer </span>
               </button>
-
+              <button 
+                class="btn btn-simple custom-btn-link"
+                data-toggle="modal"
+                data-target="#donateModal"
+                onclick="trackDonateClick()"
+              >
+                💳 <span>Donate </span>
+              </button>
 
               <!-- Sharingbutton Facebook -->
               <a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Findiafightspandemic.com%2F" target="_blank" rel="noopener" aria-label="">
@@ -339,6 +346,61 @@
           <div class="modal-body">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesNEPZBmZxNxdkivKb_Hy87jWhdtDQ615X1mK6hqd8jZem7w/viewform?embedded=true" style="width:100%;min-height:100vh" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
           </div>
+          <div class="modal-footer text-center" id="modalBtn">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  End Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-notice">
+        <div class="modal-content modal-content-donate">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                class="material-icons">clear</i></button>
+              <h2 class="main-header">
+                Help fight covid in India
+              </h2>
+            </div>
+          <div class="modal-body">
+            <div class="col-md-12">
+              <div class="row">
+                <h3 class="header light">Goonj</h3>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="header-light">Indian Donors:</h4>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-primary custom-btn"
+                  onClick="donateClick('goonjIndian')">Donate</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="header-light">International Donors:</h4>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-primary custom-btn"
+                  onClick="donateClick('goonjForeign')">Donate</button>
+                </div>
+              </div>
+              <div class="row">
+                <h3 class="header light">PM CARES</h3>
+              </div>
+              <div class="row">
+                <button class="btn btn-primary custom-btn"
+                  onClick="donateClick('pmcares')">Donate</button>
+              </div>
+              <div class="row">
+                <h3 class="header light">Zomato</h3>
+              </div>
+              <div class="row">
+                <button class="btn btn-primary custom-btn"
+                  onClick="donateClick('zomato')">Donate</button>
+              </div>
+            </div>
           <div class="modal-footer text-center" id="modalBtn">
 
           </div>
