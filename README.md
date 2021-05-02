@@ -53,9 +53,10 @@ India Fights Pandemic is an Open Source voluntary project that searches the Inte
 * [Open Issues](https://github.com/India-Fights-Pandemic/web-app/issues)
 
 
-## Vision
+## Mission (to be added)
 
-* What the project focusses on? What it does not?
+* What the project focusses on? 
+* What it does not?
 
 ### License
 This repository has been released under the [MIT License](LICENSE).
