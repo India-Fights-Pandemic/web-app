@@ -20,43 +20,38 @@ India Fights Pandemic is an Open Source voluntary project that searches the Inte
     </a>
 </div>
 
+## A must read for contributing to OSS
+* This is an excellent guide to making open source contributions, for first-timers and for veterans. 
+* [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
 
 
 ### Table of Contents
 * Setup
 * Testing & deployment
 * Contribution
-* Documentation
-* Roadmap
+* Mission
 * License
 
 ## How to Setup
 
-* git clone
-* open on browser or use firebase local (recommended)
-* https://firebase.google.com/docs/hosting/test-preview-deploy 
+* Clone the repo using `git clone https://github.com/India-Fights-Pandemic/web-app.git`
+* Open on the browser or any HTTP server for better testing
 
 
-## Testing & deployment
+## Testing & deployment (to be added)
 
-* PR test on firebase
+* PR test on firebase/ vercel
 * merge & deployment for approved users
 * checklist of things to test
 
-## Contribution
+## Contribution (to be added)
 
 * reporting bugs
 * suggesting enhancements
 * code contribution
 * pull requests
+* [Open Issues](https://github.com/India-Fights-Pandemic/web-app/issues)
 
-### Issues
-- [Open Issues](https://github.com/India-Fights-Pandemic/web-app/issues)
-- [How to Contribute]()
-
-## Good to read
-* https://opensource.guide/how-to-contribute/ 
-* 
 
 ## Vision
 
